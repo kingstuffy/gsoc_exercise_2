@@ -28,7 +28,7 @@ if(isset($_POST['string']))
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
         </select>
-        <input type="submit" value="reverse">
+        <input type="submit" value="Sort">
     </form>
     
 </div>

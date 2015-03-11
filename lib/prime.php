@@ -76,7 +76,8 @@ class RecursivePrimeNumberGenerator implements PrimeNumberGenerator{
     
     //generates the prime number within the specified range
     public function generatePrimeNumber($from, $to) {
-        $current_index = ($from < 2) ? 2 : $from;
+        $from = ($from < 2) ? 2 : $from;
+        $current_index = $from;
         
         //generates the prime number within the specified range
         if($this->checkIfPrimeNumber($current_index))

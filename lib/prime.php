@@ -52,7 +52,8 @@ class IterativePrimeNumberGenerator implements PrimeNumberGenerator{
     private function checkIfPrimeNumber($number)
     {
         $check = true;
-        for($i = 2; $i < $number; $i++)
+        $limit = ceil(sqrt($number));
+        for($i = 2; $i < $limit; $i++)
         {
             if(($number % $i) === 0)
             {
@@ -112,7 +113,9 @@ class RecursivePrimeNumberGenerator implements PrimeNumberGenerator{
     private function checkIfPrimeNumber($number)
     {
         $check = true;
-        for($i = 2; $i < $number; $i++)
+        $limit = ceil(sqrt($number));
+        
+        for($i = 2; $i < $limit; $i++)
         {
             if(($number % $i) === 0)
             {

@@ -1,11 +1,13 @@
 <?php
 
 //changes the color of the selected side menu item
+//initializes the values
+$class1 = $class2 = $class3 = $class4 = $class5 = $class6 = $class7 = $class_home = "";
+    
 if(isset($_GET['exercise']))
 {
     $exercise = htmlentities(stripslashes($_GET['exercise']));
-    //initializes the values
-    $class1 = $class2 = $class3 = $class4 = $class5 = $class6 = $class7 = $class_home = "";
+    
     switch ($exercise) {
         case '1':
             $class1 = "selected_item";

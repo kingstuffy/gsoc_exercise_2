@@ -76,6 +76,19 @@ class RecursivePrimeNumberGenerator implements PrimeNumberGenerator{
     
     //generates the prime number within the specified range
     public function generatePrimeNumber($from, $to) {
+        
+        //limits the number of recursions to 50 due to the limits of wammp server 
+        for($index = $from; $index < $to; $index += 50)
+        {
+            //sets the number of recursions to the maximum if the no of possible recursions is less thsn 50
+            $final = (($to - $index) < 50) ? ($to-$index+1) : 50;
+            $this->createPrimeNumber($index, $index + $final - 1);
+        }
+        return implode(", ", $this->prime_numbers);
+    }
+    
+    //recursive function that creates the prime numbers
+    private function createPrimeNumber($from, $to) {
         $from = ($from < 2) ? 2 : $from;
         $current_index = $from;
         
@@ -87,15 +100,15 @@ class RecursivePrimeNumberGenerator implements PrimeNumberGenerator{
         $current_index ++;
         
         //the function calls itself as long as the range is valid
-        if($from < $to)
+        if($current_index <= $to)
         {
             //sets a new range
-            $this->generatePrimeNumber($from + 1, $to);
+            $this->createPrimeNumber($current_index, $to);
         }
-        return implode(", ", $this->prime_numbers);
+        
     }
     
-    //check if the giben number is a prime number
+    //check if the given number is a prime number
     private function checkIfPrimeNumber($number)
     {
         $check = true;

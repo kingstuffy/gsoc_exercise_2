@@ -47,7 +47,8 @@ $prime_numbers = $prime_numbers_obj->getPrimeNumbers();
             $from = $temp;
         }
         
-        $prime_numbers_obj = new PrimeNumbers($recursive_prime_number_generator, $from, $to);
+        $recursive_prime_number_generator2 = new RecursivePrimeNumberGenerator();
+        $prime_numbers_obj = new PrimeNumbers($recursive_prime_number_generator2, $from, $to);
         $prime_numbers = $prime_numbers_obj->getPrimeNumbers();
         
     ?>
